@@ -6,6 +6,7 @@
 ## Used libraries
 
 * https://docs.python-telegram-bot.org/en/v20.0b0/
+* Coded with Python 3.11.1
 
 ---
 
