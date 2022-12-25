@@ -1,8 +1,8 @@
 """This module is for altering Application created by loader."""
 from telegram.ext import CommandHandler, InlineQueryHandler, filters, MessageHandler
-from loader import application
-from handlers import start, echo, caps, unknown
-from keyboards import inline_caps
+from .loader import application
+from .handles import start, echo, caps, unknown
+from .keyboards import inline_caps
 
 """Handlers"""
 # Commands.
@@ -21,3 +21,5 @@ application.add_handler(caps_handler)
 application.add_handler(echo_handler)
 application.add_handler(inline_caps_handler)
 application.add_handler(unknown_handler)
+
+"""Testing."""
