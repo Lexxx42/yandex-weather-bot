@@ -7,5 +7,5 @@ keyboard_nested = ReplyKeyboardMarkup(
             KeyboardButton(text="Share your location", request_location=True),
         ],
     ],
-    resize_keyboard=True
+    resize_keyboard=True, one_time_keyboard=True, input_field_placeholder="Please use the button."
 )
