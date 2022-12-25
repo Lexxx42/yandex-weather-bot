@@ -1,6 +1,6 @@
 """This module is for available commands handlers."""
 import logging
-from telegram import Update
+from telegram import Update, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 
 

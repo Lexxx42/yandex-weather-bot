@@ -1,3 +1,3 @@
-from .inline import inline_caps
+from .inline import inline_caps, keyboard_inline
 
-__all__ = ["inline_caps"]
+__all__ = ["inline_caps", "keyboard_inline"]
