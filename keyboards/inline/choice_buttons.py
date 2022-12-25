@@ -6,7 +6,7 @@ from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 async def inline_caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.inline_query.query
-    logging.info("inline")
+    logging.info("inline outside")
     if not query:
         return
     results = [InlineQueryResultArticle(
