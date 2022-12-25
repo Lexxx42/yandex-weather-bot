@@ -1,7 +1,7 @@
 """This module is for altering Application created by loader."""
 from telegram.ext import CommandHandler, filters, MessageHandler
 from .loader import application
-from .handles import start, echo, unknown
+from .handles import start, echo, unknown, location
 
 """Handlers"""
 # Commands.
@@ -15,3 +15,4 @@ unknown_handler = MessageHandler(filters.COMMAND, unknown)
 application.add_handler(start_handler)
 application.add_handler(echo_handler)
 application.add_handler(unknown_handler)
+application.add_handler(MessageHandler(filters.LOCATION, location))

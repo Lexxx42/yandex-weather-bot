@@ -2,6 +2,7 @@
 import logging
 from telegram import Update
 from telegram.ext import ContextTypes
+from .. import keyboards
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -12,4 +13,4 @@ Hello {update.effective_chat.username}!
 I'm a weather bot and can show you your local weather forecast!
 simply use /weather and I''show it
 \U00002B50Happy using :p
-""", reply_markup=***))
+""", reply_markup=keyboards.keyboard_nested)

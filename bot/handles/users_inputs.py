@@ -1,7 +1,7 @@
 """This module is for available message handlers."""
 import logging
 from telegram import Update
-from telegram.ext import ContextTypes
+from telegram.ext import ContextTypes, CallbackContext
 
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -22,3 +22,9 @@ Unknown command {update.message.text}\n
 /start - some info about bot
 /caps - testing command
 """)
+
+
+async def location(update: Update, context: CallbackContext):
+    current_pos = (update.message.location.latitude, update.message.location.longitude)
+    logging.info(f"coordinates {current_pos[0], current_pos[1]}")
+    return current_pos
