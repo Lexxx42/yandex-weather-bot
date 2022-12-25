@@ -1,4 +1,4 @@
-"""This module is for entrance point."""
+"""This module is an entrance point."""
 from bot import application
 
 if __name__ == '__main__':
