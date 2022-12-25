@@ -9,7 +9,7 @@ from .keyboards import inline_caps
 start_handler = CommandHandler('start', start)
 caps_handler = CommandHandler('caps', caps)
 # Messages.
-echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), echo)
+echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND) & filters.ChatType.PRIVATE, echo)
 # Inline.
 inline_caps_handler = InlineQueryHandler(inline_caps)
 # Other.

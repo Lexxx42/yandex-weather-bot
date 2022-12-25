@@ -7,5 +7,3 @@ keyboard_inline = [
     ],
     [InlineKeyboardButton("Option 3", callback_data="3")],
 ]
-
-#
