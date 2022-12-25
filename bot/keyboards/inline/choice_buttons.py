@@ -1,4 +1,6 @@
-from telegram import InlineKeyboardButton
+from telegram import InlineKeyboardButton, Update
+from telegram.ext import ContextTypes
+
 
 keyboard_inline = [
     [
@@ -7,3 +9,10 @@ keyboard_inline = [
     ],
     [InlineKeyboardButton("Option 3", callback_data="3")],
 ]
+
+
+async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Parses the CallbackQuery and updates the message text."""
+    query = update.callback_query
+    await query.answer()
+    await query.edit_message_text(text=f"Selected option: {query.data}")
