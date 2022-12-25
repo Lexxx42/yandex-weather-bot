@@ -1,6 +1,6 @@
+"""This module is for creating the Application and logging mask."""
 import logging
 import TOKEN
-import telegram
 from telegram.ext import ApplicationBuilder
 
 logging.basicConfig(
@@ -11,5 +11,4 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-bot = telegram.Bot(TOKEN.BOT_TOKEN)
 application = ApplicationBuilder().token(TOKEN.BOT_TOKEN).build()
