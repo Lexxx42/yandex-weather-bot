@@ -8,7 +8,7 @@ from telegram import InlineQueryResultArticle, InputTextMessageContent
 async def inline_caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """This function is for inline callbacks from outside of bot."""
     query = update.inline_query.query
-    logging.info("inline outside")
+    logging.info(f"inline outside {update.effective_user.id}")
     if not query:
         return
     results = [InlineQueryResultArticle(
