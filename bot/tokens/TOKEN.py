@@ -4,4 +4,4 @@ from dotenv import load_dotenv
 
 load_dotenv()
 BOT_TOKEN = os.getenv('BOT_TOKEN')
-token_yandex_weather = os.getenv('token_yandex_weather')
+TOKEN_YANDEX_WEATHER = os.getenv('token_yandex_weather')

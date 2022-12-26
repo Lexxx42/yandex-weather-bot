@@ -1,4 +1,4 @@
 from .main import application
-from .tokens import BOT_TOKEN, token_yandex_weather
+from .tokens import BOT_TOKEN, TOKEN_YANDEX_WEATHER
 
-__all__ = ["BOT_TOKEN", "application", "token_yandex_weather"]
+__all__ = ["BOT_TOKEN", "application", "TOKEN_YANDEX_WEATHER"]

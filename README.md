@@ -27,5 +27,5 @@ BOT_TOKEN=YOUR_BOT_TOKEN
 ```
 6. Copy the line into you .env file with token provided by Yandex.Weather API
 ``` shell
-token_yandex_weather=YOUR_API_YANDEX_WEATHER_TOKEN  
+TOKEN_YANDEX_WEATHER=YOUR_API_YANDEX_WEATHER_TOKEN  
 ```

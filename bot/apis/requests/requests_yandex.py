@@ -7,7 +7,7 @@ from ... import tokens
 from os import path
 
 FILE_NAME_JSON = 'yandex_weather.json'
-headers = {'X-Yandex-API-Key': tokens.token_yandex_weather}
+headers = {'X-Yandex-API-Key': tokens.TOKEN_YANDEX_WEATHER}
 
 
 def yandex_weather(latitude, longitude) -> Response:
