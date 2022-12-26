@@ -5,33 +5,33 @@ from telegram.ext import ContextTypes
 from .. import apis
 
 
-async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """This function is echo on any message from user."""
     logging.info(f"echo to user id {update.effective_chat.id}")
     await context.bot.send_message(chat_id=update.effective_chat.id, text="""
 ✨List of available commands:
-/start - some info about bot
+/start - weather forecast
+/help - general info about the bot
 """)
 
 
-async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """This function is echo on wrong command."""
     logging.info(f"unknown command from id {update.effective_chat.id}")
     await context.bot.send_message(chat_id=update.effective_chat.id, text=f"""
 Unknown command {update.message.text}\n
 ✨List of available commands:
-/start - some info about bot
-/caps - testing command
+/help - general info about the bot
 """)
 
 
-async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def location(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """This function is for handling user location."""
     current_pos = (update.message.location.latitude, update.message.location.longitude)
     logging.info(f"coordinates {current_pos[0], current_pos[1]}")
     yandex_weather = apis.get_weather_yandex(current_pos[0], current_pos[1])
     await context.bot.send_message(chat_id=update.effective_chat.id, text=f"""
-🌈 Your location is:
+🪙 Your location is:
 country: {yandex_weather['location']['country']},
 region: {yandex_weather['location']['region']},
 city: {yandex_weather['location']['city']}, district: {yandex_weather['location']['district']}
@@ -45,12 +45,9 @@ Weather now:
 💧 humidity: {yandex_weather['fact']['humidity']} %
 
 More information at: {yandex_weather['url']}
+Short forecast for the day:
+🌟 Morning: temp: {yandex_weather['morning']['temp']}, condition: {yandex_weather['morning']['condition']}
+☀️ Day: temp: {yandex_weather['day']['temp']}, condition: {yandex_weather['day']['condition']}
+🌓 Evening: temp: {yandex_weather['evening']['temp']}, condition: {yandex_weather['evening']['condition']}
+🌃 Night: temp: {yandex_weather['night']['temp']}, condition: {yandex_weather['night']['condition']}
 """)
-
-
-async def forecast(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """This function is for handling forecast for user."""
-    text = update.message.text
-    print(update)
-    print(context)
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"hello")

@@ -1,3 +1,4 @@
+"""This module is for interaction with Yandex.Weather API."""
 import requests as req
 import json
 import logging
@@ -9,21 +10,22 @@ headers = {'X-Yandex-API-Key': tokens.token_yandex_weather}
 
 
 def yandex_weather(latitude, longitude):
+    """This function is for sending GET requests to Yandex.Weather API."""
     url_yandex = f'https://api.weather.yandex.ru/v2/forecast?lat={latitude}&lon={longitude}&[lang=ru_RU]'
     yandex_req = req.get(url_yandex, headers=headers)
     logging.info(f"made request to API yandex {url_yandex}")
     return yandex_req
 
 
-def save_to_file(data):
+def save_to_file(data: dict) -> None:
+    """This function is for saving data just in case we need it."""
     with open(FILE_NAME_JSON, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False)
         logging.info(f"data saved to {FILE_NAME_JSON}")
 
 
-def get_weather_yandex(lat: float, lon: float):
-    latitude_input = lat
-    longitude_input = lon
+def get_weather_yandex(latitude_input: float, longitude_input: float) -> dict:
+    """This function is for ejection the needed data from input json dict."""
     data_request = yandex_weather(latitude_input, longitude_input).json()
     logging.info("data collected from response")
     save_to_file(data_request)
@@ -66,7 +68,8 @@ def get_weather_yandex(lat: float, lon: float):
     return weather
 
 
-def load_from_file():
+def load_from_file() -> dict:
+    """This function is for loading data from file."""
     if path.exists(FILE_NAME_JSON):
         with open(FILE_NAME_JSON, encoding="utf-8") as file:
             data = json.load(file)
