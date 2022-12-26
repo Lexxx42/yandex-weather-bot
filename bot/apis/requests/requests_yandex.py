@@ -2,6 +2,7 @@
 import requests as req
 import json
 import logging
+from requests import Response
 from ... import tokens
 from os import path
 
@@ -9,7 +10,7 @@ FILE_NAME_JSON = 'yandex_weather.json'
 headers = {'X-Yandex-API-Key': tokens.token_yandex_weather}
 
 
-def yandex_weather(latitude, longitude):
+def yandex_weather(latitude, longitude) -> Response:
     """This function is for sending GET requests to Yandex.Weather API."""
     url_yandex = f'https://api.weather.yandex.ru/v2/forecast?lat={latitude}&lon={longitude}&[lang=ru_RU]'
     yandex_req = req.get(url_yandex, headers=headers)
