@@ -1,6 +1,6 @@
 """This module is for creating the Application and logging mask."""
 import logging
-from .TOKEN import BOT_TOKEN
+from .tokens import BOT_TOKEN
 from telegram.ext import ApplicationBuilder
 
 logging.basicConfig(

@@ -1,3 +1,3 @@
-from .. import token_yandex_weather
+from .requests import get_weather_yandex
 
-__all__ = ['token_yandex_weather']
+__all__ = ["get_weather_yandex"]
