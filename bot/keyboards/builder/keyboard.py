@@ -4,7 +4,7 @@ from telegram import ReplyKeyboardMarkup, KeyboardButton
 keyboard_nested = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="Share your location", request_location=True),
+            KeyboardButton(text="Weather forecast from Yandex", request_location=True),
         ],
     ],
     resize_keyboard=True, one_time_keyboard=True, input_field_placeholder="Please use the button."
