@@ -16,5 +16,3 @@ application.add_handler(start_handler)
 application.add_handler(echo_handler)
 application.add_handler(unknown_handler)
 application.add_handler(MessageHandler(filters.LOCATION, location))
-
-"""Catch button pressing."""

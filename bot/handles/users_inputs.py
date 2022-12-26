@@ -25,8 +25,21 @@ Unknown command {update.message.text}\n
 """)
 
 
-async def location(update: Update, context: CallbackContext):
+async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """This function is for handling user location."""
     current_pos = (update.message.location.latitude, update.message.location.longitude)
     logging.info(f"coordinates {current_pos[0], current_pos[1]}")
-    await apis.get_weather_yandex(current_pos[0], current_pos[1])
-    return current_pos
+    yandex_weather = apis.get_weather_yandex(current_pos[0], current_pos[1])
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"""
+🌈 Your location is:
+country: {yandex_weather['location']['country']}, region: {yandex_weather['location']['region']},
+city: {yandex_weather['location']['city']}, district: {yandex_weather['location']['district']}
+
+Weather now:
+🌡 temperature: {yandex_weather['fact']['temp']} °C
+🤔 feels like: {yandex_weather['fact']['feels_like']} °C
+⚡️ condition: {yandex_weather['fact']['condition']}
+💨 atmospheric pressure: {yandex_weather['fact']['pressure_mm']} mm Hg
+🌬 wind speed: {yandex_weather['fact']['wind_speed']} m/sec
+💧 humidity: {yandex_weather['fact']['humidity']} %
+""")
