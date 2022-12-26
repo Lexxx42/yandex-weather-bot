@@ -9,9 +9,6 @@ from .handles import start, echo, unknown, location, forecast
 start_handler = CommandHandler('start', start)
 # Messages.
 echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND) & filters.ChatType.PRIVATE, echo)
-# Buttons.
-#button_current_weather = MessageHandler(filters.LOCATION & filters.Regex("^(Current weather)$"), location)
-#button_forecast = MessageHandler(filters.Text(["Forecast"]), forecast)
 # Other.
 unknown_handler = MessageHandler(filters.COMMAND, unknown)
 

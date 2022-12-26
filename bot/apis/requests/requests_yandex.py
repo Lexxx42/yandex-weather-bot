@@ -36,8 +36,14 @@ def get_weather_yandex(lat: float, lon: float):
     weather['location'] = dict()
     weather['location']['country'] = yandex_json['geo_object']['country']['name']
     weather['location']['region'] = yandex_json['geo_object']['province']['name']
-    weather['location']['city'] = yandex_json['geo_object']['locality']['name']
-    weather['location']['district'] = yandex_json['geo_object']['district']['name']
+    if yandex_json['geo_object']['locality']:
+        weather['location']['city'] = yandex_json['geo_object']['locality']['name']
+    else:
+        weather['location']['city'] = "Unlocated"
+    if yandex_json['geo_object']['district']:
+        weather['location']['district'] = yandex_json['geo_object']['district']['name']
+    else:
+        weather['location']['district'] = "Unlocated"
     # Current weather.
     weather['fact'] = dict()
     weather['fact']['temp'] = yandex_json['fact']['temp']
