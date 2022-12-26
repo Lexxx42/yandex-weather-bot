@@ -3,7 +3,6 @@ from telegram.ext import CommandHandler, filters, MessageHandler
 from .loader import application
 from .handles import start, echo, unknown, location, help_command
 
-
 """Handlers."""
 # Commands.
 start_handler = CommandHandler('start', start)
