@@ -1,13 +1,17 @@
 """This module is for altering Application created by loader."""
 from telegram.ext import CommandHandler, filters, MessageHandler
 from .loader import application
-from .handles import start, echo, unknown, location
+from .handles import start, echo, unknown, location, forecast
+
 
 """Handlers."""
 # Commands.
 start_handler = CommandHandler('start', start)
 # Messages.
 echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND) & filters.ChatType.PRIVATE, echo)
+# Buttons.
+#button_current_weather = MessageHandler(filters.LOCATION & filters.Regex("^(Current weather)$"), location)
+#button_forecast = MessageHandler(filters.Text(["Forecast"]), forecast)
 # Other.
 unknown_handler = MessageHandler(filters.COMMAND, unknown)
 

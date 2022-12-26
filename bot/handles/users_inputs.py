@@ -1,7 +1,7 @@
 """This module is for available message handlers."""
 import logging
 from telegram import Update
-from telegram.ext import ContextTypes, CallbackContext
+from telegram.ext import ContextTypes
 from .. import apis
 
 
@@ -32,7 +32,8 @@ async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
     yandex_weather = apis.get_weather_yandex(current_pos[0], current_pos[1])
     await context.bot.send_message(chat_id=update.effective_chat.id, text=f"""
 🌈 Your location is:
-country: {yandex_weather['location']['country']}, region: {yandex_weather['location']['region']},
+country: {yandex_weather['location']['country']},
+region: {yandex_weather['location']['region']},
 city: {yandex_weather['location']['city']}, district: {yandex_weather['location']['district']}
 
 Weather now:
@@ -42,4 +43,14 @@ Weather now:
 💨 atmospheric pressure: {yandex_weather['fact']['pressure_mm']} mm Hg
 🌬 wind speed: {yandex_weather['fact']['wind_speed']} m/sec
 💧 humidity: {yandex_weather['fact']['humidity']} %
+
+More information at: {yandex_weather['url']}
 """)
+
+
+async def forecast(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """This function is for handling forecast for user."""
+    text = update.message.text
+    print(update)
+    print(context)
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"hello")
