@@ -1,6 +1,7 @@
 # yandex-weather-bot
 
-* Simple weather bot python-telegram-bot v20.0b0
+* Simple weather bot python-telegram-bot v20.0b0.
+
 Uses Yandex.Weather API and provides weather forecast.
 ---
 
