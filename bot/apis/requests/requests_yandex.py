@@ -26,5 +26,5 @@ async def get_weather_yandex(lat: float, lon: float):
     latitude_input = lat
     longitude_input = lon
     data_request = yandex_weather(latitude_input, longitude_input, tokens.token_yandex_weather).json()
-    logging.info(f"data saved to {FILE_NAME_JSON}")
+    logging.info("data collected from response")
     await save_to_file(data_request)
