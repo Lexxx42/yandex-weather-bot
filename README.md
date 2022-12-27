@@ -13,8 +13,8 @@ Uses Yandex.Weather API and provides weather forecast.
 
 ## How to start the bot?
 
-1. Created new bot from https://t.me/BotFather if you don't have one
-2. Get token for API Yandex Weather https://yandex.com/dev/weather/
+1. Create a new bot from https://t.me/BotFather if you don't have one
+2. Get the token for API Yandex Weather https://yandex.com/dev/weather/
 3. Install all requirements from requirements.txt
 
 ``` shell
