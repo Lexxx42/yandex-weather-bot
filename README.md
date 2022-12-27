@@ -30,3 +30,7 @@ BOT_TOKEN=YOUR_BOT_TOKEN
 ``` shell
 TOKEN_YANDEX_WEATHER=YOUR_API_YANDEX_WEATHER_TOKEN  
 ```
+## To Do
+
+1. Get off writing data from API.
+2. Optimaze data collection.
