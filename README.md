@@ -22,11 +22,11 @@ pip install -r requirements.txt
 ```
 
 4. Create file .env in project root
-5. Copy the line into you .env file with token provided by BotFather
+5. Copy the line into your .env file with token provided by BotFather
 ``` shell
 BOT_TOKEN=YOUR_BOT_TOKEN  
 ```
-6. Copy the line into you .env file with token provided by Yandex.Weather API
+6. Copy the line into your .env file with token provided by Yandex.Weather API
 ``` shell
 TOKEN_YANDEX_WEATHER=YOUR_API_YANDEX_WEATHER_TOKEN  
 ```
