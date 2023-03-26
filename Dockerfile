@@ -1,15 +1,14 @@
 # base image
 FROM ubuntu
 
-# installing of work directory (by default) in image and var for project dir
+# installing of work directory (by default) in image
 WORKDIR /app
-ARG project_path=./weatherbot
+ARG project_path=.
 
 # installing of requirements
-RUN apt-get update ;\
-    apt-get install -y --no-install-recommends python3-pip;\
-    apt-get clean && rm -rf /var/lib/apt/lists/* ;\
-    touch .env
+RUN apt-get update && apt-get install -y python3 python3-pip
+
+RUN touch .env
 
 # copying of requirements
 COPY $project_path/requirements.txt .

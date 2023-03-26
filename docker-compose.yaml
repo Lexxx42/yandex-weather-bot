@@ -12,5 +12,6 @@ services:
         environment:
             BOT_TOKEN: ${BOT_TOKEN}
             TOKEN_YANDEX_WEATHER: ${TOKEN_YANDEX_WEATHER}
+        #network_mode: host
         # restart container if it down
         restart: always
