@@ -1,0 +1,17 @@
+# version of docker-compose
+version: '3'
+
+# services list
+services:
+    # we have only one (let's call it app)
+    app:
+        # build image with default settings (из Dockerfile) from current dir
+        build: .
+        stop_signal: SIGINT
+        # sending env vars from file .env to container
+        environment:
+            BOT_TOKEN: ${BOT_TOKEN}
+            TOKEN_YANDEX_WEATHER: ${TOKEN_YANDEX_WEATHER}
+        #network_mode: host
+        # restart container if it down
+        restart: always
