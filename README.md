@@ -69,13 +69,11 @@ cd yandex-weather-bot/
 nano .env
 ```
 
-``` shell
-BOT_TOKEN=YOUR_BOT_TOKEN  
+```
+BOT_TOKEN=YOUR_BOT_TOKEN
+TOKEN_YANDEX_WEATHER=YOUR_API_YANDEX_WEATHER_TOKEN
 ```
 
-``` shell
-TOKEN_YANDEX_WEATHER=YOUR_API_YANDEX_WEATHER_TOKEN  
-```
 
 Don't forget to save changes!
 
