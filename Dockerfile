@@ -15,14 +15,11 @@ RUN set -eux; \
 
 RUN touch .env
 
-# copying of requirements
-COPY $project_path/requirements.txt .
+# copying project to image
+COPY . .
 
 # installing requirements from pip
 RUN pip3 install -r requirements.txt
-
-# copying project to image
-COPY $project_path/*.py ./
 
 # start script after container start
 ENTRYPOINT ["python3", "app.py"]
