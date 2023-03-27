@@ -39,7 +39,7 @@ TOKEN_YANDEX_WEATHER=YOUR_API_YANDEX_WEATHER_TOKEN
 ## If there is an error about lack of access, add the current user to the docker group:
 
 ```shell
-sudo gpasswd -a $USER docker
+sudo usermod -a -G docker [user]
 newgrp docker
 ```
 
