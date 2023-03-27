@@ -1,12 +1,17 @@
 # base image
-FROM ubuntu
+FROM debian:bullseye-slim
 
 # installing of work directory (by default) in image
 WORKDIR /app
 ARG project_path=.
 
 # installing of requirements
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN set -eux; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends \
+		python3-pip \
+	; \
+	rm -rf /var/lib/apt/lists/*
 
 RUN touch .env
 
