@@ -82,3 +82,8 @@ Don't forget to save changes!
 ```shell
 docker-compose up --build
 ```
+
+### Added docker image to public repository
+
+[Docker Hub](https://hub.docker.com/r/alex42konukhov/yandex-weather-bot)
+
