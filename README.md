@@ -36,7 +36,7 @@ TOKEN_YANDEX_WEATHER=YOUR_API_YANDEX_WEATHER_TOKEN
 
 # New features with docker
 
-## If there is an error about lack of access, add the current user to the docker group:
+## If there is an error about lack of access, add current user to the docker group:
 
 ```shell
 sudo usermod -a -G docker [user]
@@ -87,3 +87,23 @@ docker-compose up --build
 
 [Docker Hub](https://hub.docker.com/r/alex42konukhov/yandex-weather-bot)
 
+If you are using docker image from DockerHub use following commands:
+
+1. To pull repository use:
+
+```docker
+docker pull alex42konukhov/yandex-weather-bot:debian-bullseye
+```
+
+2. Create `.env` file and add your telegram token and yandex weather api key
+
+```docker
+BOT_TOKEN=
+TOKEN_YANDEX_WEATHER=
+```
+
+3. Copy the modified configuration file from your host machine to the container's file system:
+
+```docker
+docker cp .env docker_container_id:/app/.env
+```
