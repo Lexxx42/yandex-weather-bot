@@ -108,7 +108,7 @@ TOKEN_YANDEX_WEATHER=
 docker cp .env docker_container_id:/app/.env
 ```
 
-5. Run docker container in detached mode
+4. Run docker container in detached mode
 
 ```docker
 docker start container_id
